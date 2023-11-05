@@ -6,9 +6,10 @@ def cryptography(message,keyeven,keyodd):
   
 
   def computekey(key):
-    key = key % 26
-    if key < 0 :
-      key = key + 26
+    # key = key % 26
+    # if key < 0 :
+    #   key = key + 26
+    key = ((key % 26) + 26) % 26
     return key
   
   def evenorodd(index):

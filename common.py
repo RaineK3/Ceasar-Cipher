@@ -8,15 +8,17 @@ def common():
     print(f"Please enter en or de")
     return common()
   
-  message = input("Enter message to encrypt or decrypt : ")
-  keyeven = int(input("Enter the number of positions down/up for eventh character : "))
-  keyodd = int(input("Enter the number of positions down/up for oddth character : "))
-
   if method == "en":
-    ciphertext = cryptography(message,keyeven,keyodd)
+    plaintext = input("Enter message to encrypt(plain text) : ")
+    keyeven = int(input("Enter the number of positions down/up for eventh character : "))
+    keyodd = int(input("Enter the number of positions down/up for oddth character : "))
+    ciphertext = cryptography(plaintext,keyeven,keyodd)
     print(f"Ciphertext : {ciphertext}")
   elif method == "de":
-    plaintext = cryptography(message,26-keyeven,26-keyodd)
+    ciphertext = input("Enter message to decrypt(ciphertext) : ")
+    keyeven = int(input("Enter the number of positions down/up for eventh character : "))
+    keyodd = int(input("Enter the number of positions down/up for oddth character : "))
+    plaintext = cryptography(ciphertext,26-keyeven,26-keyodd)
     print(f"Plaintext : {plaintext}")
 
 common()
