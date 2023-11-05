@@ -28,8 +28,10 @@ def cryptography():
         keyeven = int(input("Enter the number of positions down/up for eventh character : "))
         keyodd = int(input("Enter the number of positions down/up for oddth character : "))
         encryptedMessage = ""
+        start_at = 0
         for char in message:
-            index = message.index(char)
+            index = message.index(char,start_at)
+            start_at +=1
             key = evenorodd(index)
             print(key)
             char_code = ord(char)
@@ -49,8 +51,10 @@ def cryptography():
         keyeven = int(input("Enter the number of positions down/up for eventh character : "))
         keyodd = int(input("Enter the number of positions down/up for oddth character : "))
         decryptedMessage = ""
+        start_at = 0 
         for char in message:
-            index = message.index(char)
+            index = message.index(char,start_at)
+            start_at += 1
             key = evenorodd(index)
             print(key)
             char_code = ord(char)
