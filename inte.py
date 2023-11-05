@@ -16,8 +16,8 @@ def cryptography():
     #     decrypt()
 
     # def encrypt():
-    def evenorodd(key):
-        if key%2 == 0:
+    def evenorodd(index):
+        if index%2 == 0:
             return keyeven
         else:
             return keyodd
