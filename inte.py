@@ -4,27 +4,34 @@ def cryptography():
     lowera_code = ord('a')
     lowerz_code = ord('z')
 
-    method = input("Choose en for encryption\nde for decryption : ")
-    message = input("Enter message to encrypt or decrypt : ")
-    key = int(input("Enter the key number : "))
+    method = input("Choose 'en' for encryption\n'de' for decryption : \n\n")
 
-    # if method not in ["en","de"]:
-    #   print(f"Please enter en or de")
-    #   return cryptography()
+    if method not in ["en","de"]:
+      print(f"Please enter en or de")
+      return cryptography()
     
-    # if key <= 0 :
-    #     print(f"Key must be greater than 0")
-    #     return cryptography()
-
     # if method == "en":
     #     encrypt()
     # elif method == "de":
     #     decrypt()
 
     # def encrypt():
+    def evenorodd(key):
+        if key%2 == 0:
+            return keyeven
+        else:
+            return keyodd
+
     if method == "en":
+        message = input("Enter message to encrypt : ")
+        # key = int(input("Enter the key number : "))
+        keyeven = int(input("Enter the number of positions down/up for eventh character : "))
+        keyodd = int(input("Enter the number of positions down/up for oddth character : "))
         encryptedMessage = ""
         for char in message:
+            index = message.index(char)
+            key = evenorodd(index)
+            print(key)
             char_code = ord(char)
             if char_code >= upperA_code and  char_code <= upperZ_code:
                 ascii_code = upperA_code + (char_code - upperA_code + key) % 26
@@ -37,8 +44,15 @@ def cryptography():
 
     # def decrypt():
     if method == "de":
+        message = input("Enter message to decrypt : ")
+        # key = int(input("Enter the key number : "))
+        keyeven = int(input("Enter the number of positions down/up for eventh character : "))
+        keyodd = int(input("Enter the number of positions down/up for oddth character : "))
         decryptedMessage = ""
         for char in message:
+            index = message.index(char)
+            key = evenorodd(index)
+            print(key)
             char_code = ord(char)
             if char_code >= upperA_code and  char_code <= upperZ_code:
                 ascii_code = upperA_code + (char_code - upperA_code - key) % 26
