@@ -33,7 +33,6 @@ def cryptography():
             index = message.index(char,start_at)
             start_at +=1
             key = evenorodd(index)
-            print(key)
             char_code = ord(char)
             if char_code >= upperA_code and  char_code <= upperZ_code:
                 ascii_code = upperA_code + (char_code - upperA_code + key) % 26
@@ -41,6 +40,8 @@ def cryptography():
             elif char_code >= lowera_code and  char_code <= lowerz_code:
                 ascii_code = lowera_code + (char_code - lowera_code + key) % 26
                 encryptedMessage += chr(ascii_code)
+            else:
+                encryptedMessage += char
 
         print(encryptedMessage)
 
@@ -56,7 +57,6 @@ def cryptography():
             index = message.index(char,start_at)
             start_at += 1
             key = evenorodd(index)
-            print(key)
             char_code = ord(char)
             if char_code >= upperA_code and  char_code <= upperZ_code:
                 ascii_code = upperA_code + (char_code - upperA_code - key) % 26
@@ -64,6 +64,8 @@ def cryptography():
             elif char_code >= lowera_code and  char_code <= lowerz_code:
                 ascii_code = lowera_code + (char_code - lowera_code - key) % 26
                 decryptedMessage += chr(ascii_code)
+            else:
+                decryptedMessage += char
 
         print(decryptedMessage)
 
